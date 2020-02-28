@@ -1,21 +1,25 @@
-import React, { useState } from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import React from 'react'
+import { Switch, Route } from 'react-router-dom'
 
-import Login from "./components/Login";
-import "./styles.scss";
+import ProtectedRoute from './helpers/ProtectedRoute'
+import Login from './components/Login'
+import Bubbles from './components/BubblePage'
+import './styles.css'
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <Route exact path="/" component={Login} />
-        {/* 
-          Build a PrivateRoute component that will 
-          display BubblePage when you're authenticated 
-        */}
-      </div>
-    </Router>
-  );
+    <React.Fragment>
+      {/* <div className='App'></div> */}
+      <Switch>
+        <Route exact path='/'>
+          <Login />
+        </Route>
+        <ProtectedRoute path='/bubbles'>
+          <Bubbles />
+        </ProtectedRoute>
+      </Switch>
+    </React.Fragment>
+  )
 }
 
-export default App;
+export default App
