@@ -76,6 +76,13 @@ const colors = [
     },
     id: 11,
   },
+  {
+    color: 'black',
+    code: {
+      hex: '#1E1E1E',
+    },
+    id: 12,
+  },
 ]
 
 module.exports = colors
