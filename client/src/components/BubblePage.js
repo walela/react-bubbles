@@ -7,14 +7,12 @@ import Bubbles from './Bubbles'
 import ColorList from './ColorList'
 
 const LogoutButton = styled.button`
-  width: 297px;
+  width: 180px;
   padding: 18px 20px 17px 20px;
-  color: white;
-  background-color: #4194dc;
   font-family: 'Tenor Sans';
   font-weight: bold;
   font-size: 1.2rem;
-  margin-left: 50vw;
+  margin-left: 55vw;
   outline: none;
 `
 

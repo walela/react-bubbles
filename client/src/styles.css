@@ -37,7 +37,7 @@ body {
 }
 
 input:focus {
-  border: 2px solid blueviolet;
+  border: 5px solid blueviolet;
 }
 .colors-wrap {
   height: 100%;
@@ -104,5 +104,5 @@ input {
   font-family: 'Kosugi Maru';
 }
 .logout:hover {
-  background-color: #1a99ff;
+  border: 1px solid black;
 }

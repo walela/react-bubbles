@@ -23,8 +23,8 @@ const Heading = styled.h1`
 const Input = styled.input`
   width: 256px;
   padding: 18px;
-  border-radius: 4px;
-  border: 2px solid grey;
+  border-radius: 2%;
+  border: 4px solid grey;
   margin-top: 12px;
   margin-left: 56px;
   font-family: 'Kosugi Maru';
