@@ -10,11 +10,10 @@ const LogoutButton = styled.button`
   width: 297px;
   padding: 18px 20px 17px 20px;
   color: white;
-  background-color: #31b6a8;
+  background-color: #4194dc;
   font-family: 'Tenor Sans';
   font-weight: bold;
   font-size: 1.2rem;
-  margin-top: 24px;
   margin-left: 50vw;
   outline: none;
 `
