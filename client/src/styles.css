@@ -102,3 +102,6 @@ input {
   margin-top: 16px;
   font-family: 'Kosugi Maru';
 }
+.logout:hover {
+  background-color: #1a99ff;
+}
