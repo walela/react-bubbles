@@ -1,7 +1,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const CORS = require('cors')
-const colors = require('./colors')
+let colors = require('./colors')
 
 const app = express()
 const token = 'ahuBHejkJJiMDhmODZhZi0zaeLTQ4ZfeaseOGZgesai1jZWYgrTA07i73Gebhu98'
