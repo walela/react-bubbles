@@ -37,7 +37,7 @@ body {
 }
 
 input:focus {
-  border: 5px solid blueviolet;
+  border: 2px solid blueviolet;
 }
 .colors-wrap {
   height: 100%;

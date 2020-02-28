@@ -24,7 +24,7 @@ const Input = styled.input`
   width: 256px;
   padding: 18px;
   border-radius: 2%;
-  border: 4px solid grey;
+  border: 2px solid grey;
   margin-top: 12px;
   margin-left: 56px;
   font-family: 'Kosugi Maru';
