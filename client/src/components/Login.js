@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import axios from 'axios'
+import { useHistory } from 'react-router-dom'
 
 const LoginContainer = styled.div`
   width: 420px;
-  height: 58vh;
+  height: 380px;
   border-radius: 4px;
   box-shadow: -6px 8px 10px grey;
   background-color: lightskyblue;
@@ -17,7 +18,6 @@ const Heading = styled.h1`
   text-align: center;
   font-family: 'Marmelad';
   text-decoration: underline;
-  color: firebrick;
 `
 
 const Input = styled.input`
@@ -43,9 +43,10 @@ const LoginButton = styled.button`
 `
 
 const Login = () => {
-  // make a post request to retrieve a token from the api
-  // when you have handled the token, navigate to the BubblePage route
+  const api = 'http://localhost:5000/api/login'
+  const history = useHistory()
   const initialLoginForm = { username: '', password: '' }
+
   const [loginForm, setLoginForm] = useState(initialLoginForm)
 
   const handleChange = e => {
@@ -53,25 +54,34 @@ const Login = () => {
     console.log(loginForm)
   }
 
-  const handleSubmit = e => {}
+  const handleSubmit = e => {
+    axios
+      .post(api, { username: loginForm.username, password: loginForm.password })
+      .then(res => {
+        localStorage.setItem('token', res.data.payload)
+        history.push('/bubbles')
+      })
+      .catch(err => console.error(err))
+      .finally(setLoginForm(initialLoginForm))
+  }
 
   return (
     <LoginContainer>
       <Heading>Login</Heading>
       <Input
-        placeholder='Username'
-        value={loginForm.value}
         name='username'
+        value={loginForm.username}
         onChange={handleChange}
+        placeholder='Username'
       />
       <Input
         type='password'
-        placeholder='Password'
         name='password'
-        onChange={handleChange}
         value={loginForm.password}
+        onChange={handleChange}
+        placeholder='Password'
       />
-      <LoginButton>Sign In</LoginButton>
+      <LoginButton onClick={handleSubmit}>Sign In</LoginButton>
     </LoginContainer>
   )
 }
